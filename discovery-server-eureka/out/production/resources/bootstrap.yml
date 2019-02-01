@@ -1,0 +1,10 @@
+# may required to read application specific properties from config server
+spring:
+  cloud:
+    config:
+      name: discovery-service
+
+      uri: http://localhost:8880
+
+  application:
+    name: discovery-service

@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+		//set('springCloudVersion', 'Greenwich.RELEASE')
+	}
+	repositories {
+		//mavenCentral()
+		maven {
+			url "http://devsrv4.wipo.int:8081/nexus/content/groups/public"
+		}
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		//mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+allprojects {
+	group = 'local'
+	version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	repositories {
+		//mavenCentral()
+		maven {
+			url "http://devsrv4.wipo.int:8081/nexus/content/groups/public"
+		}
+	}
+
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter'
+		runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+		compileOnly 'org.projectlombok:lombok'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	}
+}

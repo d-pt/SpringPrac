@@ -1,0 +1,4 @@
+rootProject.name = 'spring-prac'
+//include 'app-user'
+include 'app-user','discovery-server-eureka', 'config-server-spring'
+

@@ -1,0 +1,16 @@
+server:
+  port: 8880
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///${user.home}/../../Dev/IdeaProjects/SpringPrac/temp-config
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/

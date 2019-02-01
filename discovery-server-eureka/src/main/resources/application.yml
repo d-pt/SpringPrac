@@ -1,0 +1,14 @@
+#below properties would be overridden by config-server
+
+server:
+  port: 8761 #used just for web dashboard, changing to any other port require further config
+  #to call http://localhost:8761/register i.e. override http://localhost:8761
+#  servlet:
+ #   context-path: /register
+
+#disable self registration(by default its enable)
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
